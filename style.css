@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: linear-gradient(302deg,#9500ff,#1a002b);
+    background-size: 120% 120%;
+    animation: gradient-animation 4s ease infinite;
+}
+
+.about-segment {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0ecf2;
+    box-shadow: 0 0px 12px #9500ff;
+    margin: 30px auto;
+    max-width: 800px;
+    border-radius: 10px;
+    overflow: hidden;
+    animation: fadeIn 2s ease-in-out;
+    transition: box-shadow 0.8s ease;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 30px;
+}
+
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-right: 30px;
+    box-shadow: 0 4px 8px #9500ff;
+    animation: glow-move 5s infinite;
+}
+
+.text-segment {
+    max-width: 500px;
+}
+
+.text-segment h1 {
+    overflow: hidden; 
+    white-space: nowrap;
+    font-family: "Roboto Mono", monospace;
+    width: 9ch;
+    font-size: 2.5em;
+    margin-bottom: 1px;
+    color: #2a1a37;
+    border-right: .15em solid #7512b3;
+    animation:
+        typing 2s steps(9, end),
+        blink-caret .75s step-end infinite;
+}
+
+.text-segment h2 {
+    margin-top: 0px;
+    margin-bottom: 20px;
+    color: #7512b3;
+}
+
+.text-segment p {
+    font-family: "Roboto Mono", monospace;
+    font-size: 1.1em;
+    color: #2a1a37;
+    line-height: 1.6;
+}
+.contact-segment {
+    margin-top: 30px; 
+    margin-bottom: 30px;
+}
+.contact-button {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    color: #f0ecf2;
+    background-color: #7512b3;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 
+        background-color 0.3s ease,
+        box-shadow 0.5s ease;
+}
+
+.icon {
+    margin-left: 10px;
+    display: inline;
+    vertical-align: middle;
+    cursor: pointer;
+    fill:#7512b3;
+    transition: 
+        fill 0.3s ease,
+        filter 0.5s ease; 
+}
+
+.about-segment:hover {
+    box-shadow: 0 4px 30px #9500ff;
+}
+
+.icon:hover {
+    filter: drop-shadow(0px 4px 8px #9500ff);
+    fill: #9500ff;
+}
+
+.contact-button:hover {
+    box-shadow: 0 4px 8px #9500ff;
+    background-color: #9500ff;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+@keyframes glow-move {
+    50% {box-shadow:  0 1px 8px #9500ff;}
+}
+
+@keyframes typing {
+    from { width: 0 }
+}
+  
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #7512b3; }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-image {
+        margin: 0 auto;
+    }
+
+    .text-segment {
+        max-width: 100%;
+    }
+
+    .text-segment h1{
+        width: 100%;
+        border-right: none;
+        animation: none;
+    }
+    
+    .text-segment p {
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) and (max-height: 880px) {
+    body {
+        overflow: scroll;
+        height: auto;
+    }
+    .about-segment {
+        max-height: 100%;
+        height: 100%;
+    }
+}
